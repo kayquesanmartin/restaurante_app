@@ -28,6 +28,7 @@ def reservar_mesa(cliente_cpf, mesa_id, data_reserva_str):
     finally:
         session.close()
 
+
 def adicionar_mesas():
     session = get_session()
 
@@ -45,6 +46,7 @@ def adicionar_mesas():
         print(f"Ocorreu um erro ao adicionar as mesas: {e}")
     finally:
         session.close()
+
 
 def listar_mesas_disponiveis():
     session = get_session()

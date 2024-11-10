@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, Boolean
 from config import Base
 
+
 class Mesa(Base):
     __tablename__ = 'mesas'
 

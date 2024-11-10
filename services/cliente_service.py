@@ -1,6 +1,7 @@
 from models.cliente import Cliente
 from config import get_session
 
+
 def cadastrar_cliente(cpf, nome, email):
     session = get_session()
 

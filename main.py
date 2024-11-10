@@ -7,6 +7,13 @@ from config import Base, engine
 # Cria as tabelas no banco de dados
 Base.metadata.create_all(bind=engine)
 
+
+# TODO: Adicionar função: Remover reserva | Pagamento? (Adicionar endereço)
+# TODO: Adicionar função: Listar cliente
+# TODO: Adicionar função: Listar pedidos
+# TODO: Reduzir menu, menu dentro de menu
+
+
 def exibir_menu():
     print("\n=== Menu de Gerenciamento do Restaurante ===")
     print("1. Cadastrar Cliente")
@@ -18,6 +25,7 @@ def exibir_menu():
     print("7. Alterar Pedido")
     print("8. Visualizar Reservas")
     print("9. Sair")
+
 
 def main():
     while True:
@@ -62,6 +70,7 @@ def main():
         elif opcao == 9:
             print("Saindo... Até logo!")
             break
+
 
 if __name__ == "__main__":
     main()

@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from config import Base
 
+
 class Reserva(Base):
     __tablename__ = 'reservas'
 

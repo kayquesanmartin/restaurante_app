@@ -1,10 +1,9 @@
 from services.cliente_service import cadastrar_cliente, listar_clientes
-from services.mesa_service import reservar_mesa
+from services.mesa_service import reservar_mesa, listar_mesas_disponiveis, adicionar_mesas
 from services.pedido_service import fazer_pedido, cancelar_pedido, alterar_pedido, listar_pedidos
 from services.reserva_service import visualizar_reservas
 from config import Base, engine
 
-# Cria as tabelas no banco de dados
 Base.metadata.create_all(bind=engine)
 
 def exibir_menu_principal():
@@ -23,9 +22,8 @@ def exibir_menu_clientes():
 
 def exibir_menu_mesas():
     print("\n=== Gerenciamento de Mesas ===")
-    print("1. Adicionar Mesas")
-    print("2. Listar Mesas Disponíveis")
-    print("3. Voltar")
+    print("1. Listar Mesas Disponíveis")
+    print("2. Voltar")
 
 def exibir_menu_reservas():
     print("\n=== Gerenciamento de Reservas ===")
@@ -61,8 +59,6 @@ def main():
             exibir_menu_mesas()
             opcao_mesa = int(input("Escolha uma opção: "))
             if opcao_mesa == 1:
-                adicionar_mesas()
-            elif opcao_mesa == 2:
                 listar_mesas_disponiveis()
 
         elif opcao == 3:

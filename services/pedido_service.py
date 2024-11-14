@@ -32,3 +32,16 @@ def alterar_pedido(pedido_id, nova_descricao):
     else:
         print("Pedido não encontrado.")
     session.close()
+
+def listar_pedidos():
+    session = get_session()
+    try:
+        pedidos = session.query(Pedido).all()
+        if pedidos:
+            print("Pedidos realizados:")
+            for pedido in pedidos:
+                print(f"ID: {pedido.id}, Reserva: {pedido.reserva_id}, Descrição: {pedido.descricao}")
+        else:
+            print("Nenhum pedido encontrado.")
+    finally:
+        session.close()
